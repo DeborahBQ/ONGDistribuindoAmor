@@ -19,10 +19,11 @@ nav{
 }
 
 .a-menu{
+       display: inline-block;
+       margin: 0 20px;
 	   font-family: itim; 
        color: #134689; 
        text-decoration: none;
-       margin-right: 200px;
        text-align: center;
 }
 
@@ -100,6 +101,7 @@ section {
 
 #container{
 	      display: flex;
+          flex-wrap: wrap;
 	      margin-top: 15px;
 	      margin-bottom: 20px;
 }
