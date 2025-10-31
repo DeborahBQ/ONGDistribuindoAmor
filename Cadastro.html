@@ -98,6 +98,35 @@
     <p>Desenvolvido por <a href="http://google.com" target="_blank">Deborah Queiroz</a> - 2025</p>
  </footer>
 
+ <script>
+  // Máscara para CPF: 000.000.000-00
+  document.getElementById('cpf').addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 11) value = value.slice(0, 11);
+    value = value.replace(/(\d{3})(\d)/, '$1.$2');
+    value = value.replace(/(\d{3})(\d)/, '$1.$2');
+    value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    e.target.value = value;
+  });
+
+  // Máscara para telefone: (00) 00000-0000
+  document.getElementById('telefone').addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 11) value = value.slice(0, 11);
+    value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+    value = value.replace(/(\d{5})(\d)/, '$1-$2');
+    e.target.value = value;
+  });
+
+  // Máscara para CEP: 00000-000
+  document.getElementById('cep').addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 8) value = value.slice(0, 8);
+    value = value.replace(/(\d{5})(\d)/, '$1-$2');
+    e.target.value = value;
+  });
+</script>
+
 </body>
 </html>
 
